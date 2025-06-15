@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shiksha Shrivastava | Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- 🔹 Hero Section -->
+  <section id="home">
+    <h1 class="typewriter-glow">
+      <span id="typewriter"></span><span class="cursor">|</span>
+    </h1>
+    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Developer at work" class="hero-gif">
+    
+    <!-- Navigation Menu -->
+    <ul class="nav-links">
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certificates">Certificates & LOR</a></li>
+      <li><a href="#research">Research</a></li>
+    </ul>
+  </section>
+
+  <!-- 🔹 About Section -->
+  <section id="about" class="page-container">
+    <h2>About Me</h2>
+    <p>Hi! I'm <strong>Shiksha Shrivastava </strong>, a Computer Science graduate from University of Delhi.</p>
+    <p>Passionate about coding, AI, and creating meaningful applications.</p>
+    <p><strong>Internship:</strong> Academic Intern at Code4Bots (4 months)</p>
+    <p><strong>Achievements:</strong> Gold Medal - Science Olympiad, 2nd Prize in Inter-College Chess, School Captain</p>
+  </section>
+
+  <!-- 🔹 Skills Section -->
+  <section id="skills" class="page-container">
+    <h2>Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Python, C++, Dart</li>
+      <li><strong>Frameworks:</strong> Django, Flutter, Android Studio</li>
+      <li><strong>Cloud & DB:</strong> AWS, Firebase, MySQL</li>
+      <li><strong>Tools:</strong> Git, GitHub, LaTeX, Blender, Figma</li>
+    </ul>
+  </section>
+
+  <!-- 🔹 Projects Section -->
+  <section id="projects" class="page-container">
+    <h2>Projects</h2>
+    <ul>
+      <li><strong>AI Voice Assistant:</strong> <a href="https://github.com/Ladyunicorn560/Voice_Assistant-.git" target="_blank">GitHub</a></li>
+      <li><strong>CSV Upload Summary:</strong> <a href="https://github.com/Ladyunicorn560/CSV_UPLOAD_SUMMARY.git" target="_blank">GitHub</a></li>
+      <li><strong>E-Resource Management:</strong> <a href="https://github.com/Ladyunicorn560/E-resource_management_system.git" target="_blank">GitHub</a></li>
+      <li><strong>Student Portal:</strong> <a href="https://github.com/Ladyunicorn560/Student-Information-Portal-Django-Backend-.git" target="_blank">GitHub</a></li>
+    </ul>
+  </section>
+
+  <!-- 🔹 Certificates Section -->
+  <section id="certificates" class="page-container">
+    <h2>Certificates & LOR</h2>
+    <p>Junior Coach @ Unschool — taught Android, Hacking, and Design</p>
+    <p><a class="download-btn" href="https://drive.google.com/drive/folders/1RqD49eT0eLCrMp6aArmOvCiprPda73DL?usp=sharing" target="_blank">View Certificates</a></p>
+  </section>
+
+  <!-- 🔹 Research Section -->
+  <section id="research" class="page-container">
+    <h2>Research Papers</h2>
+     <ul>
+    <li>
+      <strong>The Influence of Artificial Intelligence on Students’ Creativity, Perspectives and Perceptions</strong> – 
+      <a href="https://jaiai.org/uploads/archivepdf/7425The_Influence_of_Artificial_Intelligence_on_Students__Creativity__Perspectives_and_Perceptions__4_%20(3)%20(1).pdf" target="_blank">
+        View Paper (JAIAI Journal)
+      </a>
+    </li>
+  </ul>
+  </section>
+
+  <!-- 🔹 Footer -->
+  <footer>
+    <p>© Shiksha Shrivastava</p>
+    <a href="mailto:shrivastavashiksha03@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://www.linkedin.com/in/shiksha-shrivastava-47477325a" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="https://github.com/Ladyunicorn560" target="_blank"><i class="fab fa-github"></i></a>
+  </footer>
+
+  <!-- 🔹 JavaScript: Typewriter -->
+  <script>
+    const text = "Hello! I'm Shiksha Shrivastava 👩‍💻";
+    let index = 0;
+    const speed = 100;
+
+    function typeWriter() {
+      if (index < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(index);
+        index++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+
+</body>
+</html>
