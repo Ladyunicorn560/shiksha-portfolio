@@ -1,107 +1,983 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Shiksha Shrivastava | Portfolio</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shiksha Shrivastava | AI Security Researcher & Developer</title>
+  <meta name="description"
+    content="Shiksha Shrivastava — Computer Science Researcher specializing in AI Security, Adversarial Machine Learning, and Intelligent Systems. M.Sc. student at University of Delhi." />
+  <meta name="keywords"
+    content="Shiksha Shrivastava, AI Security, Machine Learning, Computer Vision, Portfolio, Researcher" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg'/>" />
+  <link rel="stylesheet" href="assets/css/style.css" />
 </head>
+
 <body>
 
-  <!-- 🔹 Hero Section -->
-  <section id="home">
-    <h1 class="typewriter-glow">
-      <span id="typewriter"></span><span class="cursor">|</span>
-    </h1>
-    <img src="https://media.giphy.com/media/qgQUggAC3Pfv687qPC/giphy.gif" alt="Developer at work" class="hero-gif">
-    
-    <!-- Navigation Menu -->
-    <ul class="nav-links">
-      <li><a href="#about">About Me</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#certificates">Certificates & LOR</a></li>
-      <li><a href="#research">Research</a></li>
-    </ul>
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Noise overlay -->
+  <div class="noise-overlay"></div>
+
+  <!-- ══════════════════════ NAV ══════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">
+        <span class="logo-text">Shiksha</span><span class="logo-dot">.</span>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#research" class="nav-link">Research</a></li>
+        <li><a href="#publications" class="nav-link">Publications</a></li>
+        <li><a href="#experience" class="nav-link">Experience</a></li>
+        <li><a href="#achievements" class="nav-link">Achievements</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════ HERO ══════════════════════ -->
+  <section id="hero">
+    <div class="hero-content">
+      <div class="hero-tag animate-in delay-1">
+        <span class="tag-dot"></span>
+        <span>Available for Research Collaborations</span>
+      </div>
+      <h1 class="hero-name animate-in delay-2">
+        <span class="name-line">Shiksha</span>
+        <span class="name-line gradient-text">Shrivastava</span>
+      </h1>
+      <div class="hero-roles animate-in delay-3">
+        <span class="role-prefix">I am a </span>
+        <span class="typewriter-wrap">
+          <span id="role-typewriter"></span>
+          <span class="type-cursor">|</span>
+        </span>
+      </div>
+      <p class="hero-bio animate-in delay-4">
+        Computer Science Researcher at <span class="highlight">University of Delhi</span> •
+        Specializing in <span class="highlight">AI Security</span>, <span class="highlight">Adversarial ML</span> &amp;
+        <span class="highlight">Computer Vision</span>
+      </p>
+      <div class="hero-badges animate-in delay-5">
+        <span class="badge"><i class="fas fa-map-marker-alt"></i> Delhi, India</span>
+        <span class="badge"><i class="fas fa-graduation-cap"></i> M.Sc. CS @ DU</span>
+        <span class="badge"><i class="fas fa-shield-alt"></i> AI Security</span>
+        <span class="badge"><i class="fas fa-brain"></i> Deep Learning</span>
+      </div>
+      <div class="hero-cta animate-in delay-6">
+        <a href="#projects" class="btn btn-primary" id="view-projects-btn">
+          <span>View Projects</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+        <a href="#contact" class="btn btn-outline" id="get-in-touch-btn">
+          <span>Get In Touch</span>
+          <i class="fas fa-paper-plane"></i>
+        </a>
+        <a href="https://github.com/Ladyunicorn560" target="_blank" class="btn btn-ghost" id="github-profile-btn">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
+      <div class="hero-stats animate-in delay-6">
+        <div class="stat-item">
+          <span class="stat-num" data-count="5">0</span>
+          <span class="stat-label">Live Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="4">0</span>
+          <span class="stat-label">Manuscripts</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="2">0</span>
+          <span class="stat-label">Research Projects</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-num" style="font-size:clamp(1.4rem,3vw,2rem)">8.6</span>
+          <span class="stat-label">CGPA / 10</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="scroll-line"></div>
+      <span>Scroll</span>
+    </div>
   </section>
 
-  <!-- 🔹 About Section -->
-  <section id="about" class="page-container">
-    <h2>About Me</h2>
-    <p>Hi! I'm <strong>Shiksha Shrivastava </strong>, a Computer Science graduate from University of Delhi.</p>
-    <p>Passionate about coding, AI, and creating meaningful applications.</p>
-    <p><strong>Internship:</strong> Academic Intern at Code4Bots (4 months)</p>
-    <p><strong>Achievements:</strong> Gold Medal - Science Olympiad, 2nd Prize in Inter-College Chess, School Captain</p>
+  <!-- ══════════════════════ ABOUT ══════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">01 / ABOUT</span>
+        <h2 class="section-title">Who Am I?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text glass-card reveal">
+          <div class="code-block">
+            <div class="code-bar">
+              <span class="dot red"></span>
+              <span class="dot yellow"></span>
+              <span class="dot green"></span>
+              <span class="code-filename">about.py</span>
+            </div>
+            <pre class="code-content"><span class="kw">class</span> <span class="cn">ShikshaShrivastava</span>:
+  role = <span class="st">"CS Researcher + Developer"</span>
+  location = <span class="st">"Delhi, India"</span>
+  education = <span class="st">"M.Sc. CS, University of Delhi"</span>
+  cgpa = <span class="st">8.614 / 10</span> <span class="cm"># B.Sc. Hons</span>
+
+  research_focus = [
+    <span class="st">"AI Security"</span>,
+    <span class="st">"Adversarial ML"</span>,
+    <span class="st">"Intrusion Detection"</span>,
+    <span class="st">"Explainable AI"</span>,
+    <span class="st">"Computer Vision"</span>,
+  ]
+
+  <span class="kw">def</span> <span class="fn">mission</span>(self):
+    <span class="kw">return</span> <span class="st">"Build trustworthy, secure AI systems"</span></pre>
+          </div>
+        </div>
+        <div class="about-details reveal">
+          <p class="about-desc">
+            I'm a <strong>Computer Science Researcher</strong> focused on <strong>AI Security</strong>, adversarial
+            robustness,
+            and intelligent systems. Currently pursuing <strong>M.Sc. CS at University of Delhi</strong> (exp. 2027).
+          </p>
+          <p class="about-desc">
+            B.Sc. (Hons. with Research) — <strong>CGPA 8.614/10, First Division</strong>, Shaheed Rajguru College.
+            Erasmus+ Exchange at <strong>Silesian University, Czech Republic</strong> — <strong>A grade in Deep
+              Learning</strong>.
+          </p>
+          <div class="about-links">
+            <a href="https://linkedin.com/in/shiksha-shrivastava" target="_blank" class="about-link"
+              id="linkedin-about-btn">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+            <a href="https://github.com/Ladyunicorn560" target="_blank" class="about-link" id="github-about-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="mailto:shrivastavashiksha03@gmail.com" class="about-link" id="email-about-btn">
+              <i class="fas fa-envelope"></i> Email
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- 🔹 Skills Section -->
-  <section id="skills" class="page-container">
-    <h2>Skills</h2>
-    <ul>
-      <li><strong>Languages:</strong> Python, C++, Dart</li>
-      <li><strong>Frameworks:</strong> Django, Flutter, Android Studio</li>
-      <li><strong>Cloud & DB:</strong> AWS, Firebase, MySQL</li>
-      <li><strong>Tools:</strong> Git, GitHub, LaTeX, Blender, Figma</li>
-    </ul>
+  <!-- ══════════════════════ SKILLS ══════════════════════ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">02 / SKILLS</span>
+        <h2 class="section-title">Technical Arsenal</h2>
+        <p class="section-subtitle">Technologies I build with</p>
+      </div>
+
+      <div class="scat-grid">
+
+        <!-- AI Security - Core expertise -->
+        <div class="scat-card glass-card reveal scat-featured">
+          <div class="scat-top">
+            <div class="scat-icon-box scat-pink"><i class="fas fa-shield-alt"></i></div>
+            <div class="scat-meta">
+              <h3 class="scat-title">AI Security &amp; Cybersecurity</h3>
+              <span class="scat-badge expert">&#9733; Core Expertise</span>
+            </div>
+          </div>
+          <div class="scat-chips">
+            <span class="sc sc-pink">AI Security</span>
+            <span class="sc sc-pink">Adversarial ML</span>
+            <span class="sc sc-pink">Explainable AI (XAI)</span>
+            <span class="sc">Intrusion Detection</span>
+            <span class="sc">Network Security</span>
+            <span class="sc">Cyber Forensics</span>
+            <span class="sc">Adaptive Cyber Defense</span>
+            <span class="sc">GAN Augmentation</span>
+          </div>
+        </div>
+
+        <!-- AI / ML -->
+        <div class="scat-card glass-card reveal">
+          <div class="scat-top">
+            <div class="scat-icon-box scat-cyan"><i class="fas fa-brain"></i></div>
+            <div class="scat-meta">
+              <h3 class="scat-title">AI / Machine Learning</h3>
+              <span class="scat-badge advanced">Expert</span>
+            </div>
+          </div>
+          <div class="scat-chips">
+            <span class="sc sc-cyan">PyTorch</span>
+            <span class="sc sc-cyan">TensorFlow</span>
+            <span class="sc">Scikit-learn</span>
+            <span class="sc">Deep Learning</span>
+            <span class="sc">Computer Vision</span>
+            <span class="sc">NLP</span>
+            <span class="sc">Reinforcement Learning</span>
+            <span class="sc">Generative AI</span>
+            <span class="sc">RAG</span>
+          </div>
+        </div>
+
+        <!-- LLMs & Agents -->
+        <div class="scat-card glass-card reveal">
+          <div class="scat-top">
+            <div class="scat-icon-box scat-purple"><i class="fas fa-robot"></i></div>
+            <div class="scat-meta">
+              <h3 class="scat-title">LLMs &amp; Multi-Agent Systems</h3>
+              <span class="scat-badge advanced">Advanced</span>
+            </div>
+          </div>
+          <div class="scat-chips">
+            <span class="sc sc-purple">LangChain</span>
+            <span class="sc sc-purple">LangGraph</span>
+            <span class="sc sc-purple">Google Gemini</span>
+            <span class="sc">Multi-Agent Systems</span>
+            <span class="sc">RAG Pipelines</span>
+            <span class="sc">Ragas Evaluation</span>
+            <span class="sc">SHAP / LIME</span>
+          </div>
+        </div>
+
+        <!-- Computer Vision -->
+        <div class="scat-card glass-card reveal">
+          <div class="scat-top">
+            <div class="scat-icon-box scat-green"><i class="fas fa-eye"></i></div>
+            <div class="scat-meta">
+              <h3 class="scat-title">Computer Vision</h3>
+              <span class="scat-badge advanced">Expert</span>
+            </div>
+          </div>
+          <div class="scat-chips">
+            <span class="sc sc-green">YOLOv9</span>
+            <span class="sc sc-green">OpenCV</span>
+            <span class="sc">Object Detection</span>
+            <span class="sc">OCR</span>
+            <span class="sc">Video Streams</span>
+            <span class="sc">CNNs</span>
+            <span class="sc">Image Processing</span>
+          </div>
+        </div>
+
+        <!-- Programming -->
+        <div class="scat-card glass-card reveal">
+          <div class="scat-top">
+            <div class="scat-icon-box scat-cyan"><i class="fas fa-code"></i></div>
+            <div class="scat-meta">
+              <h3 class="scat-title">Programming Languages</h3>
+              <span class="scat-badge inter">Proficient</span>
+            </div>
+          </div>
+          <div class="scat-chips">
+            <span class="sc sc-cyan">Python</span>
+            <span class="sc">C++</span>
+            <span class="sc">TypeScript</span>
+            <span class="sc">JavaScript</span>
+            <span class="sc">Dart</span>
+          </div>
+        </div>
+
+        <!-- Frameworks -->
+        <div class="scat-card glass-card reveal">
+          <div class="scat-top">
+            <div class="scat-icon-box scat-gold"><i class="fas fa-layer-group"></i></div>
+            <div class="scat-meta">
+              <h3 class="scat-title">Frameworks &amp; Dev Stack</h3>
+              <span class="scat-badge inter">Proficient</span>
+            </div>
+          </div>
+          <div class="scat-chips">
+            <span class="sc sc-gold">FastAPI</span>
+            <span class="sc sc-gold">Next.js</span>
+            <span class="sc">React</span>
+            <span class="sc">Django / Flask</span>
+            <span class="sc">Streamlit</span>
+            <span class="sc">PostgreSQL</span>
+            <span class="sc">Supabase</span>
+            <span class="sc">Scapy</span>
+            <span class="sc">Git</span>
+            <span class="sc">LaTeX</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- ══════════════════════ PROJECTS ══════════════════════ -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">03 / PROJECTS</span>
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Selected work with live deployments</p>
+      </div>
+      <div class="render-notice">
+        <i class="fas fa-moon"></i>
+        <span><strong>Note:</strong> Render-hosted demos run on free tier — they may take <strong>~30 seconds to wake up</strong> on first visit. Hang tight!</span>
+      </div>
+      <div class="projects-grid">
+
+        <!-- SmartPost AI -->
+        <div class="project-card glass-card reveal featured" id="proj-smartpost">
+          <div class="project-card-top">
+            <div class="project-badge">⭐ Featured</div>
+            <div class="project-links-top">
+              <a href="https://smart-post-ai-frontend.vercel.app" target="_blank" class="proj-link-btn"
+                title="Live Demo" id="smartpost-demo-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Ladyunicorn560/SmartPostAI" target="_blank" class="proj-link-btn" title="GitHub"
+                id="smartpost-github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-icon-wrap">
+            <i class="fas fa-paper-plane"></i>
+          </div>
+          <h3 class="project-title">SmartPost AI</h3>
+          <p class="project-subtitle">AI-Assisted LinkedIn Content Platform</p>
+          <p class="project-desc">
+            Multi-agent LLM framework for intelligent LinkedIn content creation with RAG pipelines,
+            AI scheduling, and engagement analytics. Paper under peer review.
+          </p>
+          <div class="project-metrics">
+            <span class="metric"><i class="fas fa-robot"></i> Multi-Agent LLM</span>
+            <span class="metric"><i class="fas fa-chart-line"></i> Auto-Analytics</span>
+          </div>
+          <div class="project-tags">
+            <span>FastAPI</span><span>Next.js</span><span>LangChain</span>
+            <span>LLM</span><span>RAG</span><span>Supabase</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://smart-post-ai-frontend.vercel.app" target="_blank" class="proj-btn primary"
+              id="smartpost-live-btn">
+              <i class="fas fa-rocket"></i> Live Demo
+            </a>
+            <a href="https://github.com/Ladyunicorn560/SmartPostAI" target="_blank" class="proj-btn secondary"
+              id="smartpost-github-btn2">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- LingaSynthesize -->
+        <div class="project-card glass-card reveal" id="proj-linga">
+          <div class="project-card-top">
+            <div class="project-badge purple">Multi-Agent</div>
+            <div class="project-links-top">
+              <a href="https://lingasynthesize.onrender.com" target="_blank" class="proj-link-btn" title="Live Demo"
+                id="linga-demo-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Ladyunicorn560/LingaSynthesize" target="_blank" class="proj-link-btn" title="GitHub"
+                id="linga-github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-icon-wrap purple">
+            <i class="fas fa-language"></i>
+          </div>
+          <h3 class="project-title">LingaSynthesize</h3>
+          <p class="project-subtitle">Multi-Agent Cross-Lingual Research System</p>
+          <p class="project-desc">
+            Multi-agent system for cross-lingual research retrieval and synthesis across
+            English, Japanese, and German sources using LangGraph + Gemini.
+          </p>
+          <div class="project-metrics">
+            <span class="metric"><i class="fas fa-globe"></i> 3 Languages</span>
+            <span class="metric"><i class="fas fa-robot"></i> Multi-Agent</span>
+          </div>
+          <div class="project-tags">
+            <span>LangGraph</span><span>LangChain</span><span>Google Gemini</span><span>FastAPI</span><span>Ragas</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://lingasynthesize.onrender.com" target="_blank" class="proj-btn primary"
+              id="linga-live-btn" title="May take ~30s to wake from Render sleep">
+              <i class="fas fa-rocket"></i> Live Demo
+            </a>
+            <a href="https://github.com/Ladyunicorn560/LingaSynthesize" target="_blank" class="proj-btn secondary" id="linga-repo-btn">
+              <i class="fab fa-github"></i> Repo
+            </a>
+          </div>
+        </div>
+
+        <!-- ALPR -->
+        <div class="project-card glass-card reveal" id="proj-alpr">
+          <div class="project-card-top">
+            <div class="project-badge cyan">CV</div>
+            <div class="project-links-top">
+              <a href="https://indian-automatic-license-plate.onrender.com" target="_blank" class="proj-link-btn"
+                title="Live Demo" id="alpr-demo-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Ladyunicorn560/Indian-Automatic-License-Plate-Recognition-ALPR-"
+                target="_blank" class="proj-link-btn" title="GitHub" id="alpr-github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-icon-wrap cyan">
+            <i class="fas fa-car"></i>
+          </div>
+          <h3 class="project-title">Indian ALPR System</h3>
+          <p class="project-subtitle">Automatic License Plate Recognition</p>
+          <p class="project-desc">
+            Real-time YOLOv9 + OCR pipeline for Indian license-plate detection. Supports image, video,
+            and live-stream inputs.
+          </p>
+          <div class="project-metrics">
+            <span class="metric"><i class="fas fa-eye"></i> YOLOv9 Detection</span>
+            <span class="metric"><i class="fas fa-video"></i> Live Stream</span>
+          </div>
+          <div class="project-tags">
+            <span>YOLOv9</span><span>OCR</span><span>OpenCV</span>
+            <span>Streamlit</span><span>Python</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://indian-automatic-license-plate.onrender.com" target="_blank" class="proj-btn primary"
+              id="alpr-live-btn" title="May take ~30s to wake from Render sleep">
+              <i class="fas fa-rocket"></i> Live Demo
+            </a>
+            <a href="https://github.com/Ladyunicorn560/Indian-Automatic-License-Plate-Recognition-ALPR-" target="_blank"
+              class="proj-btn secondary" id="alpr-repo-btn">
+              <i class="fab fa-github"></i> Repo
+            </a>
+          </div>
+        </div>
+
+        <!-- EPTMS -->
+        <div class="project-card glass-card reveal" id="proj-eptms">
+          <div class="project-card-top">
+            <div class="project-badge purple">FullStack</div>
+            <div class="project-links-top">
+              <a href="https://eptms-frontend-app.onrender.com" target="_blank" class="proj-link-btn" title="Live App"
+                id="eptms-demo-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Ladyunicorn560/Employee-Project-Task-Management-System-EPTMS-"
+                target="_blank" class="proj-link-btn" title="GitHub" id="eptms-github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-icon-wrap purple">
+            <i class="fas fa-tasks"></i>
+          </div>
+          <h3 class="project-title">EPTMS</h3>
+          <p class="project-subtitle">Employee Project & Task Management System</p>
+          <p class="project-desc">
+            Full-stack enterprise task management with role-based access, real-time updates,
+            and REST API backend.
+          </p>
+          <div class="project-metrics">
+            <span class="metric"><i class="fas fa-users"></i> Role-Based Access</span>
+            <span class="metric"><i class="fas fa-bell"></i> Real-time Updates</span>
+          </div>
+          <div class="project-tags">
+            <span>React</span><span>FastAPI</span><span>PostgreSQL</span><span>REST API</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://eptms-frontend-app.onrender.com" target="_blank" class="proj-btn primary"
+              id="eptms-frontend-btn" title="May take ~30s to wake from Render sleep">
+              <i class="fas fa-rocket"></i> Live Demo
+            </a>
+            <a href="https://github.com/Ladyunicorn560/Employee-Project-Task-Management-System-EPTMS-" target="_blank"
+              class="proj-btn secondary" id="eptms-github-btn2">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+        <!-- Traffic Counter -->
+        <div class="project-card glass-card reveal" id="proj-traffic">
+          <div class="project-card-top">
+            <div class="project-badge cyan">CV</div>
+            <div class="project-links-top">
+              <a href="https://realtime-yolo-traffic-counter.onrender.com" target="_blank" class="proj-link-btn"
+                title="Live Demo" id="traffic-demo-btn">
+                <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Ladyunicorn560/Realtime-yolo-traffic-counter" target="_blank"
+                class="proj-link-btn" title="GitHub" id="traffic-github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-icon-wrap cyan">
+            <i class="fas fa-traffic-light"></i>
+          </div>
+          <h3 class="project-title">Real-Time Traffic Counter</h3>
+          <p class="project-subtitle">YOLO-Based Vehicle Counting System</p>
+          <p class="project-desc">
+            Real-time YOLO traffic monitoring that counts and classifies vehicles across multiple lanes
+            with live stream support.
+          </p>
+          <div class="project-metrics">
+            <span class="metric"><i class="fas fa-tachometer-alt"></i> Real-time</span>
+            <span class="metric"><i class="fas fa-road"></i> Multi-lane</span>
+          </div>
+          <div class="project-tags">
+            <span>YOLO</span><span>OpenCV</span><span>Python</span><span>Streamlit</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://realtime-yolo-traffic-counter.onrender.com" target="_blank" class="proj-btn primary"
+              id="traffic-live-btn" title="May take ~30s to wake from Render sleep">
+              <i class="fas fa-rocket"></i> Live Demo
+            </a>
+            <a href="https://github.com/Ladyunicorn560/Realtime-yolo-traffic-counter" target="_blank"
+              class="proj-btn secondary" id="traffic-repo-btn">
+              <i class="fab fa-github"></i> Repo
+            </a>
+          </div>
+        </div>
+
+        <!-- StegoGuard -->
+        <div class="project-card glass-card reveal" id="proj-stego">
+          <div class="project-card-top">
+            <div class="project-badge">Security</div>
+            <div class="project-links-top">
+              <a href="https://github.com/Ladyunicorn560/StegoGuard" target="_blank" class="proj-link-btn" title="GitHub"
+                id="stego-github-btn">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+          <div class="project-icon-wrap">
+            <i class="fas fa-user-secret"></i>
+          </div>
+          <h3 class="project-title">StegoGuard</h3>
+          <p class="project-subtitle">Image-Based Data Exfiltration Detection</p>
+          <p class="project-desc">
+            Deep-learning system detecting covert data embedding in images. CNN-based risk
+            classification with human-readable explanations.
+          </p>
+          <div class="project-metrics">
+            <span class="metric"><i class="fas fa-shield-alt"></i> CNN Security</span>
+            <span class="metric"><i class="fas fa-chart-bar"></i> Risk Scoring</span>
+          </div>
+          <div class="project-tags">
+            <span>Python</span><span>TensorFlow</span><span>Keras</span><span>Streamlit</span>
+          </div>
+          <div class="project-actions">
+            <a href="https://github.com/Ladyunicorn560/StegoGuard" target="_blank" class="proj-btn secondary" id="stego-repo-btn">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="projects-footer reveal">
+        <a href="https://github.com/Ladyunicorn560" target="_blank" class="btn btn-outline" id="all-projects-btn">
+          <i class="fab fa-github"></i>
+          <span>View All on GitHub</span>
+          <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
   </section>
 
-  <!-- 🔹 Projects Section -->
-  <section id="projects" class="page-container">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>AI Voice Assistant:</strong> <a href="https://github.com/Ladyunicorn560/Voice_Assistant-.git" target="_blank">GitHub</a></li>
-      <li><strong>CSV Upload Summary:</strong> <a href="https://github.com/Ladyunicorn560/CSV_UPLOAD_SUMMARY.git" target="_blank">GitHub</a></li>
-      <li><strong>E-Resource Management:</strong> <a href="https://github.com/Ladyunicorn560/E-resource_management_system.git" target="_blank">GitHub</a></li>
-      <li><strong>Student Portal:</strong> <a href="https://github.com/Ladyunicorn560/Student-Information-Portal-Django-Backend-.git" target="_blank">GitHub</a></li>
-    </ul>
+  <!-- ══════════════════════ RESEARCH ══════════════════════ -->
+  <section id="research" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">04 / RESEARCH</span>
+        <h2 class="section-title">Research Experience</h2>
+      </div>
+      <div class="research-timeline">
+
+        <div class="timeline-item reveal" id="research-hipdrs">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="research-header">
+              <div>
+                <div class="research-status peer-review">Under Peer Review</div>
+                <h3 class="research-title">H-IPDRS: A Real-Time Integrated Framework for Intrusion Prevention,
+                  Detection, and Adaptive Response</h3>
+                <p class="research-venue">Undergraduate Research Project • University of Delhi • 2025–2026</p>
+              </div>
+              <div class="research-year">2026</div>
+            </div>
+            <div class="research-metrics-grid">
+              <div class="r-metric">
+                <span class="r-metric-val">99.71%</span>
+                <span class="r-metric-label">Precision</span>
+              </div>
+              <div class="r-metric">
+                <span class="r-metric-val">99.48%</span>
+                <span class="r-metric-label">Recall</span>
+              </div>
+              <div class="r-metric">
+                <span class="r-metric-val">0.98%</span>
+                <span class="r-metric-label">False Positive Rate</span>
+              </div>
+              <div class="r-metric">
+                <span class="r-metric-val">97.79%</span>
+                <span class="r-metric-label">Top-3 Hierarchical Accuracy</span>
+              </div>
+            </div>
+            <ul class="research-points">
+              <li>Hierarchical IPDR framework combining ML, XAI, and adaptive decision-making for cyber defense.</li>
+              <li>Random Forest module with SHAP-based risk explanation across NSL-KDD, UNSW-NB15, CI-CIDS2017.</li>
+              <li><strong>97.79% Top-3 hierarchical accuracy</strong> across 63 unified attack classes.</li>
+              <li>DQN response module with Prioritized Experience Replay and cost-aware reward function.</li>
+            </ul>
+            <div class="research-tags">
+              <span>Deep Learning</span><span>Explainable AI</span><span>DQN</span>
+              <span>SHAP</span><span>NSL-KDD</span><span>Cyber Defense</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" id="research-gan">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content glass-card">
+            <div class="research-header">
+              <div>
+                <div class="research-status submitted">Submitted</div>
+                <h3 class="research-title">An Explainable Real-Time Intrusion Prevention and Detection System with
+                  GAN-Augmented Learning</h3>
+                <p class="research-venue">Research Project • 2025–2026</p>
+              </div>
+              <div class="research-year">2026</div>
+            </div>
+            <div class="research-metrics-grid">
+              <div class="r-metric">
+                <span class="r-metric-val">93.20%</span>
+                <span class="r-metric-label">Accuracy</span>
+              </div>
+              <div class="r-metric">
+                <span class="r-metric-val">95.59%</span>
+                <span class="r-metric-label">Precision</span>
+              </div>
+              <div class="r-metric">
+                <span class="r-metric-val">91.89%</span>
+                <span class="r-metric-label">Recall</span>
+              </div>
+              <div class="r-metric">
+                <span class="r-metric-val">0.9856</span>
+                <span class="r-metric-label">ROC-AUC</span>
+              </div>
+            </div>
+            <ul class="research-points">
+              <li>GAN-based synthetic data generation to fix class imbalance in UNSW-NB15.</li>
+              <li>Hybrid ensemble (RF + XGBoost + 1D-CNN): <strong>93.20% accuracy, 93.71% F1, 0.9856 ROC-AUC</strong>.
+              </li>
+              <li>SHAP + LIME explainability with Scapy-based real-time traffic monitoring pipeline.</li>
+            </ul>
+            <div class="research-tags">
+              <span>GAN</span><span>Random Forest</span><span>XGBoost</span>
+              <span>1D-CNN</span><span>SHAP</span><span>LIME</span><span>UNSW-NB15</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <!-- 🔹 Certificates Section -->
-  <section id="certificates" class="page-container">
-    <h2>Certificates & LOR</h2>
-    <p>Junior Coach @ Unschool — taught Android, Hacking, and Design</p>
-    <p><a class="download-btn" href="https://drive.google.com/drive/folders/1RqD49eT0eLCrMp6aArmOvCiprPda73DL?usp=sharing" target="_blank">View Certificates</a></p>
+  <!-- ══════════════════════ PUBLICATIONS ══════════════════════ -->
+  <section id="publications" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">05 / PUBLICATIONS</span>
+        <h2 class="section-title">Publications & Manuscripts</h2>
+      </div>
+      <div class="publications-list">
+
+        <div class="pub-card glass-card reveal" id="pub-ai-creativity">
+          <div class="pub-status published">Published</div>
+          <div class="pub-content">
+            <h3 class="pub-title">The Influence of Artificial Intelligence on Students' Creativity: Perspectives and
+              Perceptions</h3>
+            <p class="pub-venue">Journal of Artificial Intelligence and Autonomous Intelligence (JAIAI) • 2026</p>
+            <a href="https://jaiai.org/uploads/archivepdf/7425The_Influence_of_Artificial_Intelligence_on_Students__Creativity__Perspectives_and_Perceptions__4_%20(3)%20(1).pdf"
+              target="_blank" class="pub-link" id="pub1-link">
+              <i class="fas fa-file-pdf"></i> View Paper
+              <i class="fas fa-external-link-alt"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="pub-card glass-card reveal" id="pub-gan-ids">
+          <div class="pub-status submitted">Submitted</div>
+          <div class="pub-content">
+            <h3 class="pub-title">An Explainable Real-Time Intrusion Prevention and Detection System with GAN-Augmented
+              Learning</h3>
+            <p class="pub-venue">Manuscript • 2026</p>
+          </div>
+        </div>
+
+        <div class="pub-card glass-card reveal" id="pub-hipdrs">
+          <div class="pub-status peer-review">Under Peer Review</div>
+          <div class="pub-content">
+            <h3 class="pub-title">H-IPDRS: A Real-Time Integrated Framework for Intrusion Prevention, Detection, and
+              Adaptive Response</h3>
+            <p class="pub-venue">Manuscript • 2026</p>
+          </div>
+        </div>
+
+        <div class="pub-card glass-card reveal" id="pub-smartpost">
+          <div class="pub-status peer-review">Under Peer Review</div>
+          <div class="pub-content">
+            <h3 class="pub-title">SmartPost AI: An AI-Assisted Framework for Intelligent Professional Content Creation
+              and Automated LinkedIn Management</h3>
+            <p class="pub-venue">Manuscript • 2026</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <!-- 🔹 Research Section -->
-  <section id="research" class="page-container">
-    <h2>Research Papers</h2>
-     <ul>
-    <li>
-      <strong>The Influence of Artificial Intelligence on Students’ Creativity, Perspectives and Perceptions</strong> – 
-      <a href="https://jaiai.org/uploads/archivepdf/7425The_Influence_of_Artificial_Intelligence_on_Students__Creativity__Perspectives_and_Perceptions__4_%20(3)%20(1).pdf" target="_blank">
-        View Paper (JAIAI Journal)
-      </a>
-    </li>
-  </ul>
+  <!-- ══════════════════════ EXPERIENCE ══════════════════════ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">06 / EXPERIENCE</span>
+        <h2 class="section-title">Experience & Education</h2>
+      </div>
+      <div class="exp-grid">
+
+        <div class="exp-col">
+          <h3 class="exp-col-title"><i class="fas fa-briefcase"></i> Professional</h3>
+
+          <div class="exp-card glass-card reveal" id="exp-kiran">
+            <div class="exp-period">Jan 2026 – Present</div>
+            <h4 class="exp-role">Software & Automation Intern</h4>
+            <p class="exp-company"><i class="fas fa-building"></i> Kiran Automation Pvt. Ltd. • Faridabad / Remote</p>
+            <p class="exp-desc">Python and .NET automation tools for industrial workflows and real-time data processing.
+            </p>
+            <div class="exp-tags"><span>Python</span><span>.NET</span><span>Automation</span></div>
+          </div>
+
+          <div class="exp-card glass-card reveal" id="exp-codingjr">
+            <div class="exp-period">Feb 2025 – Jun 2025</div>
+            <h4 class="exp-role">Academic Intern – Curriculum & Mentorship</h4>
+            <p class="exp-company"><i class="fas fa-building"></i> CodingJr</p>
+            <p class="exp-desc">Developed Python and web-dev curriculum; mentored students on projects.</p>
+            <div class="exp-tags"><span>Python</span><span>Curriculum</span><span>Mentorship</span></div>
+          </div>
+
+          <div class="exp-card glass-card reveal" id="exp-unschool">
+            <div class="exp-period">Jul 2023 – Aug 2024</div>
+            <h4 class="exp-role">Junior Coach – App Dev & Ethical Hacking</h4>
+            <p class="exp-company"><i class="fas fa-building"></i> Unschool</p>
+            <p class="exp-desc">Mentored 30+ students in Android development and ethical hacking.</p>
+            <div class="exp-tags"><span>Android</span><span>Ethical Hacking</span><span>Coaching</span></div>
+          </div>
+        </div>
+
+        <div class="exp-col">
+          <h3 class="exp-col-title"><i class="fas fa-graduation-cap"></i> Education & International</h3>
+
+          <div class="exp-card glass-card reveal featured-exp" id="exp-msc">
+            <div class="exp-period">2026 – 2027</div>
+            <h4 class="exp-role">M.Sc. Computer Science</h4>
+            <p class="exp-company"><i class="fas fa-university"></i> University of Delhi, India</p>
+            <p class="exp-desc">Currently pursuing. Focus: AI Security &amp; Intelligent Systems.</p>
+            <div class="exp-tags"><span>AI Security</span><span>Research</span><span>ML</span></div>
+          </div>
+
+          <div class="exp-card glass-card reveal" id="exp-erasmus">
+            <div class="exp-period">2025</div>
+            <h4 class="exp-role">Erasmus+ Exchange Program</h4>
+            <p class="exp-company"><i class="fas fa-globe-europe"></i> Silesian University, Czech Republic</p>
+            <p class="exp-desc">International AI/Deep Learning coursework. <strong>A grade in Deep Learning.</strong>
+            </p>
+            <div class="exp-tags"><span>Deep Learning</span><span>Erasmus+</span><span>International</span></div>
+          </div>
+
+          <div class="exp-card glass-card reveal" id="exp-bsc">
+            <div class="exp-period">2022 – 2026</div>
+            <h4 class="exp-role">B.Sc. (Hons. with Research) – Computer Science</h4>
+            <p class="exp-company"><i class="fas fa-university"></i> Shaheed Rajguru College, University of Delhi</p>
+            <div class="exp-highlight">CGPA: 8.614 / 10 • First Division</div>
+            <p class="exp-desc">AI, ML, Deep Learning, NLP, Network Security, Cyber Forensics, Algorithms.</p>
+            <div class="exp-tags"><span>CGPA 8.614</span><span>First Division</span><span>Research</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
   </section>
 
-  <!-- 🔹 Footer -->
-  <footer>
-    <p>© Shiksha Shrivastava</p>
-    <a href="mailto:shrivastavashiksha03@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-    <a href="https://www.linkedin.com/in/shiksha-shrivastava-47477325a" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://github.com/Ladyunicorn560" target="_blank"><i class="fab fa-github"></i></a>
+  <!-- ══════════════════════ ACHIEVEMENTS ══════════════════════ -->
+  <section id="achievements" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">07 / ACHIEVEMENTS</span>
+        <h2 class="section-title">Achievements & Certifications</h2>
+      </div>
+      <div class="achievements-grid">
+
+        <div class="achievement-card glass-card reveal" id="ach-hackathon">
+          <div class="ach-icon gold"><i class="fas fa-trophy"></i></div>
+          <div class="ach-content">
+            <h4>1st Runner-Up</h4>
+            <p>TechSprint Hackathon</p>
+            <span class="ach-org">Google Developer Groups (GDG SRCASW)</span>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal" id="ach-olympiad">
+          <div class="ach-icon gold"><i class="fas fa-medal"></i></div>
+          <div class="ach-content">
+            <h4>Gold Medal</h4>
+            <p>Science Olympiad</p>
+            <span class="ach-org">National Level</span>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal" id="ach-chess">
+          <div class="ach-icon silver"><i class="fas fa-chess"></i></div>
+          <div class="ach-content">
+            <h4>Second Prize</h4>
+            <p>Inter-College Chess Competition</p>
+            <span class="ach-org">University Level</span>
+          </div>
+        </div>
+
+        <div class="achievement-card glass-card reveal" id="ach-erasmus">
+          <div class="ach-icon blue"><i class="fas fa-globe-europe"></i></div>
+          <div class="ach-content">
+            <h4>A Grade – Deep Learning</h4>
+            <p>Erasmus+ Exchange Program</p>
+            <span class="ach-org">Silesian University, Czech Republic</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="certs-section reveal">
+        <h3 class="certs-title">Certificates & Letters of Recommendation</h3>
+        <div class="certs-cta">
+          <a href="https://drive.google.com/drive/folders/1RqD49eT0eLCrMp6aArmOvCiprPda73DL?usp=sharing" target="_blank"
+            class="btn btn-primary" id="certs-view-btn">
+            <i class="fas fa-folder-open"></i>
+            <span>View All Certificates</span>
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════ CONTACT ══════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">08 / CONTACT</span>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-subtitle">Open to research collaborations, internships, and interesting conversations about AI
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <div class="contact-card glass-card" id="contact-email">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p class="contact-label">Email</p>
+              <a href="mailto:shrivastavashiksha03@gmail.com" class="contact-val">shrivastavashiksha03@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card glass-card" id="contact-linkedin">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <p class="contact-label">LinkedIn</p>
+              <a href="https://linkedin.com/in/shiksha-shrivastava" target="_blank"
+                class="contact-val">linkedin.com/in/shiksha-shrivastava</a>
+            </div>
+          </div>
+          <div class="contact-card glass-card" id="contact-github">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <p class="contact-label">GitHub</p>
+              <a href="https://github.com/Ladyunicorn560" target="_blank"
+                class="contact-val">github.com/Ladyunicorn560</a>
+            </div>
+          </div>
+          <div class="contact-card glass-card" id="contact-phone">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <p class="contact-label">Phone</p>
+              <a href="tel:+919753367707" class="contact-val">+91 9753367707</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-form-wrap reveal">
+          <form class="contact-form glass-card" id="contact-form"
+            action="https://formspree.io/f/xpppqqgo"
+            method="POST">
+            <h3 class="form-title">Send a Message</h3>
+            <div class="form-group">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" required autocomplete="name" />
+            </div>
+            <div class="form-group">
+              <label for="cf-email">Email</label>
+              <input type="email" id="cf-email" name="email" placeholder="your@email.com" required autocomplete="email" />
+            </div>
+            <div class="form-group">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject" placeholder="Research collaboration, opportunity…" />
+            </div>
+            <div class="form-group">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="Tell me about your project or idea…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary full-width" id="contact-submit-btn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+            <p class="form-note"><i class="fas fa-lock"></i> Your message goes directly to Shiksha's inbox via secure email.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════ FOOTER ══════════════════════ -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">Shiksha Shrivastava</span>
+        <span class="logo-bracket">/&gt;</span>
+      </div>
+      <p class="footer-tagline">AI Security Researcher • Machine Learning • Computer Vision</p>
+      <div class="footer-links">
+        <a href="https://github.com/Ladyunicorn560" target="_blank" id="footer-github"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/shiksha-shrivastava" target="_blank" id="footer-linkedin"><i
+            class="fab fa-linkedin"></i></a>
+        <a href="mailto:shrivastavashiksha03@gmail.com" id="footer-email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p class="footer-copy">© 2026 Shiksha Shrivastava. Crafted with passion.</p>
+    </div>
   </footer>
 
-  <!-- 🔹 JavaScript: Typewriter -->
-  <script>
-    const text = "Hello! I'm Shiksha Shrivastava 👩‍💻";
-    let index = 0;
-    const speed = 100;
-
-    function typeWriter() {
-      if (index < text.length) {
-        document.getElementById("typewriter").innerHTML += text.charAt(index);
-        index++;
-        setTimeout(typeWriter, speed);
-      }
-    }
-
-    window.onload = typeWriter;
-  </script>
-
+  <script src="assets/js/main.js"></script>
 </body>
+
 </html>
